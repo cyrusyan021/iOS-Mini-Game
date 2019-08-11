@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -22,11 +23,13 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var timer: Timer?
     var milliseconds: Float = 60 * 1000
     
+    var player: AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Styling - Timer
-        timerTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: self.timerTextField.frame.height))
+        timerTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.timerTextField.frame.height))
         timerTextField.leftViewMode = .always
         
         // Initiate Timer
@@ -35,7 +38,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        
+        playSound("shuffle")
         cardArray = model.getCards()
     }
     
@@ -66,10 +70,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             selectedCard.isFlipped = true
             selectedCell?.flip()
+            playSound("cardflip")
             
             if firstCardFlippedIndex == nil {
-                // flip the first card only
                 
+                // flipped the first card only
                 firstCardFlippedIndex = indexPath
                 
             } else {
@@ -101,11 +106,19 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             previousSelectedCell?.remove()
             nowSelectedCell?.remove()
             
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.55) {
+                self.playSound("dingcorrect")
+            }
+            
         } else {
             
             // Not matched
             nowSelectedCard.isFlipped = false
             previousSelectedCard.isFlipped = false
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.55) {
+                self.playSound("dingwrong")
+            }
             
             previousSelectedCell?.flipBack()
             nowSelectedCell?.flipBack()
@@ -140,6 +153,31 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             timerTextField.text = "Time Remaining: \(seconds)"
             
+        }
+        
+    }
+    
+    // MARK: - Sound function
+    func playSound(_ type: String = "cardflip") {
+        
+        guard let url = Bundle.main.url(forResource: "\(type)", withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
         }
         
     }
