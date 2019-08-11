@@ -21,7 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 60 * 1000
+    var milliseconds: Float = 6 * 1000
     
     var player: AVAudioPlayer?
     
@@ -87,7 +87,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     } // End of collectionView didSelect
     
-    // MARK: - Check if Cards are Matched
+    // MARK: - Check Match Function
     func checkIfMatch(_ collectionView: UICollectionView, _ indexPath: IndexPath) {
         
         let previousSelectedCell = collectionView.cellForItem(at: firstCardFlippedIndex!) as? CardCollectionViewCell
@@ -109,6 +109,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.55) {
                 self.playSound("dingcorrect")
             }
+            
+            checkGameEnd()
             
         } else {
             
@@ -135,6 +137,24 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    // MARK: - Check Game End Function
+    func checkGameEnd() {
+        
+        // check if it ends
+        var isWon = true
+        
+        for card in cardArray {
+            if card.isMatched == false {
+                isWon = false
+            }
+        }
+        
+        if isWon == true {
+            timer?.invalidate()
+            // MARK: - Add another controller
+        }
+    }
+    
     // MARK: - Timer function
     @objc func timeElapsed() {
         
@@ -144,10 +164,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if milliseconds == 0 {
             
+            checkGameEnd()
             timer?.invalidate()
             timerTextField.text = "Time Remaining: 0"
             timerTextField.textColor = UIColor.red
-            return
+            
             
         } else if milliseconds > 0 {
             

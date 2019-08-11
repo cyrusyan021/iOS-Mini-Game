@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36B5CD4523003A0C0074AB7A /* MatchGameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5CD4423003A0C0074AB7A /* MatchGameEndViewController.swift */; };
 		36EC2F0D22FEA84F0022C4FE /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0922FEA84F0022C4FE /* shuffle.wav */; };
 		36EC2F0E22FEA84F0022C4FE /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0A22FEA84F0022C4FE /* dingwrong.wav */; };
 		36EC2F0F22FEA84F0022C4FE /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0B22FEA84F0022C4FE /* dingcorrect.wav */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36B5CD4423003A0C0074AB7A /* MatchGameEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGameEndViewController.swift; sourceTree = "<group>"; };
 		36EC2F0922FEA84F0022C4FE /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		36EC2F0A22FEA84F0022C4FE /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		36EC2F0B22FEA84F0022C4FE /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				AB9DF63122FD243A00355715 /* CardCollectionViewCell.swift */,
 				AB9DF61B22FD034700355715 /* ViewController.swift */,
 				AB9DF62B22FD15D500355715 /* GameViewController.swift */,
+				36B5CD4423003A0C0074AB7A /* MatchGameEndViewController.swift */,
 				AB9DF61D22FD034700355715 /* Main.storyboard */,
 				AB9DF62022FD034800355715 /* Assets.xcassets */,
 				AB9DF62222FD034800355715 /* LaunchScreen.storyboard */,
@@ -173,6 +176,7 @@
 			files = (
 				AB9DF61C22FD034700355715 /* ViewController.swift in Sources */,
 				AB9DF62C22FD15D500355715 /* GameViewController.swift in Sources */,
+				36B5CD4523003A0C0074AB7A /* MatchGameEndViewController.swift in Sources */,
 				AB9DF61A22FD034700355715 /* AppDelegate.swift in Sources */,
 				AB9DF62E22FD17EC00355715 /* Card.swift in Sources */,
 				AB9DF63222FD243A00355715 /* CardCollectionViewCell.swift in Sources */,

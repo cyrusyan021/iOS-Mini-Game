@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,6 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="113" y="122"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="KTT-hA-gY3">
@@ -95,7 +94,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CardCell" id="gaV-7A-LJ7" customClass="CardCollectionViewCell" customModule="Match_App_2" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="gaV-7A-LJ7" customClass="CardCollectionViewCell" customModule="Match_App_2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -103,10 +102,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mId-YQ-Cd5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="186"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="170"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="TBO-kL-3bq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="186"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="170"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
@@ -157,6 +156,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuh-Io-wAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="41"/>
+        </scene>
+        <!--Match Game End View Controller-->
+        <scene sceneID="f1S-IO-kn4">
+            <objects>
+                <viewController id="oAg-ab-hee" customClass="MatchGameEndViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eNx-Tp-0ba">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-ia-6WX">
+                                <rect key="frame" x="144" y="60" width="608" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-bR-C7n">
+                                        <rect key="frame" x="0.0" y="113.5" width="289.5" height="46"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <state key="normal" title="Retry">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5P-1U-Sry">
+                                        <rect key="frame" x="289.5" y="113.5" width="318.5" height="46"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9e1-EB-bOd" firstAttribute="trailing" secondItem="CTJ-ia-6WX" secondAttribute="trailing" constant="100" id="Dlx-MD-sde"/>
+                            <constraint firstItem="CTJ-ia-6WX" firstAttribute="leading" secondItem="9e1-EB-bOd" secondAttribute="leading" constant="100" id="Wzy-Rd-0uG"/>
+                            <constraint firstItem="9e1-EB-bOd" firstAttribute="bottom" secondItem="CTJ-ia-6WX" secondAttribute="bottom" constant="60" id="lbN-JC-dxZ"/>
+                            <constraint firstItem="CTJ-ia-6WX" firstAttribute="top" secondItem="9e1-EB-bOd" secondAttribute="top" constant="60" id="pGF-qX-iMr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9e1-EB-bOd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qde-Xc-jeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="39"/>
         </scene>
     </scenes>
     <resources>
