@@ -15,7 +15,7 @@ class CardModel {
         var generatedArray = [Card]()
         var randomNumberArray = [Int]()
         
-        while randomNumberArray.count < 13 {
+        while randomNumberArray.count < 12 {
             
             let randomNumber = Int.random(in: 2...14)
             
