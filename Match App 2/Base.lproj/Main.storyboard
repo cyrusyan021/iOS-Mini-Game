@@ -160,39 +160,11 @@
         <!--Match Game End View Controller-->
         <scene sceneID="f1S-IO-kn4">
             <objects>
-                <viewController id="oAg-ab-hee" customClass="MatchGameEndViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchGameEnd" id="oAg-ab-hee" customClass="MatchGameEndViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNx-Tp-0ba">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-ia-6WX">
-                                <rect key="frame" x="144" y="60" width="608" height="273"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-bR-C7n">
-                                        <rect key="frame" x="0.0" y="113.5" width="289.5" height="46"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                        <state key="normal" title="Retry">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5P-1U-Sry">
-                                        <rect key="frame" x="289.5" y="113.5" width="318.5" height="46"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                        <state key="normal" title="Home">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="9e1-EB-bOd" firstAttribute="trailing" secondItem="CTJ-ia-6WX" secondAttribute="trailing" constant="100" id="Dlx-MD-sde"/>
-                            <constraint firstItem="CTJ-ia-6WX" firstAttribute="leading" secondItem="9e1-EB-bOd" secondAttribute="leading" constant="100" id="Wzy-Rd-0uG"/>
-                            <constraint firstItem="9e1-EB-bOd" firstAttribute="bottom" secondItem="CTJ-ia-6WX" secondAttribute="bottom" constant="60" id="lbN-JC-dxZ"/>
-                            <constraint firstItem="CTJ-ia-6WX" firstAttribute="top" secondItem="9e1-EB-bOd" secondAttribute="top" constant="60" id="pGF-qX-iMr"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9e1-EB-bOd"/>
                     </view>
                 </viewController>

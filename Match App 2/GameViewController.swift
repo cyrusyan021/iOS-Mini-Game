@@ -21,7 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 6 * 1000
+    var milliseconds: Float = 60 * 1000
     
     var player: AVAudioPlayer?
     
@@ -151,8 +151,21 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if isWon == true {
             timer?.invalidate()
-            // MARK: - Add another controller
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+                self.afterGameModal()
+            }
         }
+    }
+    
+    //MARK: - Add modalViewController (when game is end)
+    func afterGameModal() {
+        
+        // retry button and home button
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let matchGameEndViewController = storyBoard.instantiateViewController(withIdentifier: "matchGameEnd") as! MatchGameEndViewController
+        matchGameEndViewController.modalTransitionStyle = .crossDissolve
+        self.present(matchGameEndViewController, animated: true, completion: nil)
+        
     }
     
     // MARK: - Timer function
