@@ -20,7 +20,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 6 * 1000
+    var milliseconds: Float = 12 * 1000
     
     var player: AVAudioPlayer?
     
@@ -157,7 +157,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //MARK: - Add modalViewController on top of current view (when game is end)
-    func afterGameModal() {
+    func afterGameModal(win: Bool = true) {
         
         // Blur current screen
         let blurredBackgroundView = UIVisualEffectView()
@@ -168,6 +168,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         let endStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let matchGameEndViewController = endStoryBoard.instantiateViewController(withIdentifier: "matchGameEnd") as! MatchGameEndViewController
         matchGameEndViewController.modalTransitionStyle = .coverVertical
+        // Change textLabel
+        if win == true {
+            MatchGameEndViewController.win = true
+        } else {
+            MatchGameEndViewController.win = false
+        }
         self.present(matchGameEndViewController, animated: true, completion: nil)
         
     }
@@ -186,7 +192,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             timerTextField.text = "Time Remaining: 0"
             timerTextField.textColor = UIColor.red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
-                self.afterGameModal()
+                self.afterGameModal(win: false)
             }
             
         } else if milliseconds > 0 {

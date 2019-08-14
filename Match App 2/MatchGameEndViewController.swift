@@ -14,18 +14,23 @@ class MatchGameEndViewController: UIViewController {
     @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
     
+    static var win = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if MatchGameEndViewController.win == false {
+            resultLabel.text = "Game Over"
+            resultLabel.textColor = UIColor.red
+        }
+        
         // Styling: Button (Retry Button)
         retryButton.layer.borderColor = UIColor.white.cgColor
-//        retryButton.layer.borderWidth = 1
         retryButton.layer.cornerRadius = 15
         retryButton.layer.backgroundColor = UIColor.white.cgColor
         
         // Styling: Button (Home BUtton)
         homeButton.layer.borderColor = UIColor.white.cgColor
-//        homeButton.layer.borderWidth = 1
         homeButton.layer.cornerRadius = 15
         homeButton.layer.backgroundColor = UIColor.white.cgColor
     }
