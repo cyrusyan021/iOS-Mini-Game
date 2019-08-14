@@ -10,31 +10,45 @@ import UIKit
 
 class MatchGameEndViewController: UIViewController {
     
+    @IBOutlet var baseView: UIView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = UIColor.clearColor()
-//        view.opaque = false
-        
         // Styling: Button (Retry Button)
-        let retryButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        retryButton.setTitle("Retry", for: .normal)
-        retryButton.backgroundColor = .white
+        retryButton.layer.borderColor = UIColor.white.cgColor
+//        retryButton.layer.borderWidth = 1
         retryButton.layer.cornerRadius = 15
-        retryButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.view.addSubview(retryButton)
+        retryButton.layer.backgroundColor = UIColor.white.cgColor
         
         // Styling: Button (Home BUtton)
-//        homeButton.setTitle("Home", for: .normal)
-//        homeButton.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-//        homeButton.layer.cornerRadius = 15
-    }
-    
-    @objc func buttonAction() {
-        print("retry...")
+        homeButton.layer.borderColor = UIColor.white.cgColor
+//        homeButton.layer.borderWidth = 1
+        homeButton.layer.cornerRadius = 15
+        homeButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
     
+    @IBAction func retryOnClick(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            let gameStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let gameViewController = gameStoryBoard.instantiateViewController(withIdentifier: "matchGame") as! GameViewController
+            gameViewController.modalTransitionStyle = .flipHorizontal
+            self.present(gameViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func homeOnClick(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            let homeStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = homeStoryBoard.instantiateViewController(withIdentifier: "home")
+            homeViewController.modalTransitionStyle = .crossDissolve
+            self.present(homeViewController, animated: true, completion: nil)
+        }
+    }
     
     /*
     // MARK: - Navigation
