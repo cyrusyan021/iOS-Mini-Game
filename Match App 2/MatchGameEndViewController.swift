@@ -10,7 +10,6 @@ import UIKit
 
 class MatchGameEndViewController: UIViewController {
     
-    @IBOutlet var baseView: UIView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!

@@ -12,7 +12,6 @@ import AVFoundation
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var timerTextField: UITextField!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var cardArray = [Card]()
@@ -157,16 +156,18 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    //MARK: - Transit to modalViewController (when game is end)
+    //MARK: - Add modalViewController on top of current view (when game is end)
     func afterGameModal() {
         
-//        let blurredBackgroundView = UIVisualEffectView()
-//        blurredBackgroundView.frame = baseView.frame
-//        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
-//        baseView.addSubview(blurredBackgroundView)
+        // Blur current screen
+        let blurredBackgroundView = UIVisualEffectView()
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        view.addSubview(blurredBackgroundView)
+        
         let endStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let matchGameEndViewController = endStoryBoard.instantiateViewController(withIdentifier: "matchGameEnd") as! MatchGameEndViewController
-        matchGameEndViewController.modalTransitionStyle = .crossDissolve
+        matchGameEndViewController.modalTransitionStyle = .coverVertical
         self.present(matchGameEndViewController, animated: true, completion: nil)
         
     }

@@ -161,7 +161,7 @@
         <!--Match Game End View Controller-->
         <scene sceneID="f1S-IO-kn4">
             <objects>
-                <viewController storyboardIdentifier="matchGameEnd" id="oAg-ab-hee" customClass="MatchGameEndViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchGameEnd" modalPresentationStyle="overFullScreen" id="oAg-ab-hee" customClass="MatchGameEndViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNx-Tp-0ba">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,9 +224,8 @@
                         <viewLayoutGuide key="safeArea" id="9e1-EB-bOd"/>
                     </view>
                     <connections>
-                        <outlet property="baseView" destination="eNx-Tp-0ba" id="h8M-SI-cgm"/>
                         <outlet property="homeButton" destination="79b-fT-5hU" id="EVY-0x-5my"/>
-                        <outlet property="resultLabel" destination="53q-Nz-bRx" id="toF-QB-Odx"/>
+                        <outlet property="resultLabel" destination="53q-Nz-bRx" id="XTj-gV-EX2"/>
                         <outlet property="retryButton" destination="g3L-pv-VOM" id="a6B-M5-z1q"/>
                     </connections>
                 </viewController>
