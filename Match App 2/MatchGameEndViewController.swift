@@ -19,6 +19,7 @@ class MatchGameEndViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // resultLabel is "Congradulations" and in yellow by default
         if MatchGameEndViewController.win == false {
             resultLabel.text = "Game Over"
             resultLabel.textColor = UIColor.red

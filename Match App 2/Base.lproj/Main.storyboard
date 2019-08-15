@@ -72,19 +72,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="mA1-fo-bJE">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-29-9ax">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-29-9ax">
                                 <rect key="frame" x="44" y="0.0" width="808" height="393"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Time Remianing: 10" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDa-II-4xR">
-                                        <rect key="frame" x="269" y="0.0" width="270" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 90.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-GV-tHR">
+                                        <rect key="frame" x="538" y="0.0" width="270" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="QOw-Kh-PPt"/>
-                                            <constraint firstAttribute="width" constant="270" id="dZp-V1-12f"/>
+                                            <constraint firstAttribute="height" constant="40" id="hmv-Nc-bYF"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="wRw-21-y23"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZI-96-Vee">
                                         <rect key="frame" x="0.0" y="40" width="808" height="353"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,7 +151,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="CZI-96-Vee" id="PCX-7I-JLQ"/>
-                        <outlet property="timerTextField" destination="HDa-II-4xR" id="SoR-LL-mHC"/>
+                        <outlet property="timerLabel" destination="kMH-GV-tHR" id="gCa-az-zJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuh-Io-wAL" userLabel="First Responder" sceneMemberID="firstResponder"/>

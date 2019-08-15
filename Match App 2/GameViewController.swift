@@ -11,7 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var timerTextField: UITextField!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var cardArray = [Card]()
@@ -20,16 +20,16 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 12 * 1000
+    var milliseconds: Float = 5 * 1000
     
     var player: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Styling - Timer
-        timerTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.timerTextField.frame.height))
-        timerTextField.leftViewMode = .always
+//        // Styling - Timer
+//        timerLabel.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.timerTextField.frame.height))
+//        timerLabel.leftViewMode = .always
         
         // Initiate Timer
         timer = Timer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
@@ -156,7 +156,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    //MARK: - Add modalViewController on top of current view (when game is end)
+    // MARK: - Add modalViewController on top of current view (when game is end)
     func afterGameModal(win: Bool = true) {
         
         // Blur current screen
@@ -189,15 +189,15 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             checkGameEnd()
             timer?.invalidate()
-            timerTextField.text = "Time Remaining: 0"
-            timerTextField.textColor = UIColor.red
+            timerLabel.text = "Time Remaining: 0"
+            timerLabel.textColor = UIColor.red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
                 self.afterGameModal(win: false)
             }
             
         } else if milliseconds > 0 {
             
-            timerTextField.text = "Time Remaining: \(seconds)"
+            timerLabel.text = "Time Remaining: \(seconds)"
             
         }
         
