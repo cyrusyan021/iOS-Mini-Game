@@ -22,10 +22,15 @@ class CardModel {
             if randomNumberArray.contains(randomNumber) == false {
                 
                 let cardA = Card()
-                cardA.cardName = "card\(randomNumber)"
-                
                 let cardB = Card()
-                cardB.cardName = "card\(randomNumber)"
+                
+                if SelectGameStyleViewController.gameStyle == "poker" {
+                    cardA.cardName = "card\(randomNumber)"
+                    cardB.cardName = "card\(randomNumber)"
+                } else {
+                    cardA.cardName = "card_special\(randomNumber)"
+                    cardB.cardName = "card_special\(randomNumber)"
+                }
                 
                 generatedArray.append(cardA)
                 generatedArray.append(cardB)

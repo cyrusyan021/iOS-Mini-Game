@@ -12,6 +12,7 @@
 		36EC2F0E22FEA84F0022C4FE /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0A22FEA84F0022C4FE /* dingwrong.wav */; };
 		36EC2F0F22FEA84F0022C4FE /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0B22FEA84F0022C4FE /* dingcorrect.wav */; };
 		36EC2F1022FEA84F0022C4FE /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC2F0C22FEA84F0022C4FE /* cardflip.wav */; };
+		AB0535AF2305163500AA6A7F /* SelectGameStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0535AE2305163500AA6A7F /* SelectGameStyleViewController.swift */; };
 		AB9DF61A22FD034700355715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9DF61922FD034700355715 /* AppDelegate.swift */; };
 		AB9DF61C22FD034700355715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9DF61B22FD034700355715 /* ViewController.swift */; };
 		AB9DF61F22FD034700355715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9DF61D22FD034700355715 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		36EC2F0A22FEA84F0022C4FE /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		36EC2F0B22FEA84F0022C4FE /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
 		36EC2F0C22FEA84F0022C4FE /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		AB0535AE2305163500AA6A7F /* SelectGameStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameStyleViewController.swift; sourceTree = "<group>"; };
 		AB9DF61622FD034700355715 /* Match App 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Match App 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9DF61922FD034700355715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB9DF61B22FD034700355715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				AB9DF62D22FD17EC00355715 /* Card.swift */,
 				AB9DF63122FD243A00355715 /* CardCollectionViewCell.swift */,
 				AB9DF61B22FD034700355715 /* ViewController.swift */,
+				AB0535AE2305163500AA6A7F /* SelectGameStyleViewController.swift */,
 				AB9DF62B22FD15D500355715 /* GameViewController.swift */,
 				36B5CD4423003A0C0074AB7A /* MatchGameEndViewController.swift */,
 				AB9DF61D22FD034700355715 /* Main.storyboard */,
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0535AF2305163500AA6A7F /* SelectGameStyleViewController.swift in Sources */,
 				AB9DF61C22FD034700355715 /* ViewController.swift in Sources */,
 				AB9DF62C22FD15D500355715 /* GameViewController.swift in Sources */,
 				36B5CD4523003A0C0074AB7A /* MatchGameEndViewController.swift in Sources */,

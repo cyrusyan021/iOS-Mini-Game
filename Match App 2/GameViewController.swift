@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,7 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 5 * 1000
+    var milliseconds: Float = 9 * 1000
     
     var player: AVAudioPlayer?
     
@@ -150,7 +151,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if isWon == true {
             timer?.invalidate()
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
                 self.afterGameModal()
             }
         }
@@ -191,7 +192,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             timer?.invalidate()
             timerLabel.text = "Time Remaining: 0"
             timerLabel.textColor = UIColor.red
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
                 self.afterGameModal(win: false)
             }
             

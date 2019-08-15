@@ -31,6 +31,13 @@ class CardCollectionViewCell: UICollectionViewCell {
         
         frontImageView.image = UIImage(named: card.cardName)
         
+        if SelectGameStyleViewController.gameStyle == "poker" {
+            backImageView.image = UIImage(named: "back")
+        } else {
+            backImageView.image = UIImage(named: "back_special")
+        }
+        
+        
         // Deal with reusable elements' issue
         if card.isFlipped == true {
             UIView.transition(from: backImageView, to: frontImageView, duration: 0, options: [.showHideTransitionViews], completion: nil)
