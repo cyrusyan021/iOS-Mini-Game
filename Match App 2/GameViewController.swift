@@ -21,7 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 100 * 1000
+    var milliseconds: Float = 120 * 10.0
     
     var player: AVAudioPlayer?
     
@@ -38,7 +38,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
         // Initiate Timer
-        timer = Timer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 0.01, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
         collectionView.dataSource = self
@@ -66,7 +66,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if milliseconds == 0 { return }
+        if milliseconds <= 0 { return }
         
         let selectedCell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
         let selectedCard = cardArray[indexPath.row]
@@ -187,11 +187,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Timer function
     @objc func timeElapsed() {
         
-        milliseconds -= 4
+        milliseconds -= 0.01
         
-        let seconds = String(format: "%.2f", milliseconds/1000)
+        let seconds = String(format: "%.2f", milliseconds)
         
-        if milliseconds == 0 {
+        if milliseconds <= 0 {
             
             checkGameEnd()
             timer?.invalidate()
