@@ -12,8 +12,11 @@ class SelectGameStyleViewController: UIViewController {
     
     @IBOutlet weak var pokerView: UIView!
     @IBOutlet weak var pokerBackgroundImageView: UIImageView!
+    @IBOutlet weak var pokerCoverView: UIView!
+    
     @IBOutlet weak var cartoonView: UIView!
     @IBOutlet weak var cartoonBackgroundImageView: UIImageView!
+    @IBOutlet weak var cartoonCoverView: UIView!
     
     static var gameStyle = "poker"
     
@@ -23,8 +26,16 @@ class SelectGameStyleViewController: UIViewController {
         // Styling - Background Image
         pokerBackgroundImageView.layer.cornerRadius = 10
         pokerBackgroundImageView.clipsToBounds = true
+        
+        pokerCoverView.layer.cornerRadius = 10
+        pokerCoverView.clipsToBounds = true
+        
         cartoonBackgroundImageView.layer.cornerRadius = 10
         cartoonBackgroundImageView.clipsToBounds = true
+        
+        cartoonCoverView.layer.cornerRadius = 10
+        cartoonCoverView.clipsToBounds = true
+        
         
         // Tap Gesture - Setup for both View
         let pokerTapGesture = UITapGestureRecognizer(target: self, action: #selector(styleOnClick(from:)))
@@ -39,14 +50,24 @@ class SelectGameStyleViewController: UIViewController {
     @objc func styleOnClick(from: UIGestureRecognizer) {
         
         if from.view == pokerView {
+            
             SelectGameStyleViewController.gameStyle = "poker"
+            pokerCoverView.layer.opacity = 0.3
+            pokerCoverView.layer.backgroundColor = UIColor.black.cgColor
+            
         } else if from.view == cartoonView {
+            
             SelectGameStyleViewController.gameStyle = "cartoon"
+            cartoonCoverView.layer.opacity = 0.3
+            cartoonCoverView.layer.backgroundColor = UIColor.black.cgColor
+            
         }
         
-        let gameStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let matchGameViewController = gameStoryBoard.instantiateViewController(withIdentifier: "matchGame") as! GameViewController
-        self.present(matchGameViewController, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05) {
+            let gameStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let matchGameViewController = gameStoryBoard.instantiateViewController(withIdentifier: "matchGame") as! GameViewController
+            self.present(matchGameViewController, animated: true, completion: nil)
+        }
         
     }
     

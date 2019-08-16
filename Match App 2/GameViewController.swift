@@ -21,7 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 120 * 10.0
+    var milliseconds: Float = 9 * 10.00
     
     var player: AVAudioPlayer?
     

@@ -109,8 +109,15 @@
                                                             <constraint firstAttribute="width" secondItem="YP2-dh-6xA" secondAttribute="height" multiplier="12:17" id="t9a-NO-raq"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8v-tD-GO2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="235" height="252"/>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="f8v-tD-GO2" secondAttribute="trailing" id="2I7-OI-Zif"/>
+                                                    <constraint firstItem="f8v-tD-GO2" firstAttribute="top" secondItem="jdv-xL-Llo" secondAttribute="top" id="8tr-g5-8VA"/>
+                                                    <constraint firstItem="f8v-tD-GO2" firstAttribute="leading" secondItem="jdv-xL-Llo" secondAttribute="leading" id="DtU-eO-0ir"/>
+                                                    <constraint firstAttribute="bottom" secondItem="f8v-tD-GO2" secondAttribute="bottom" id="JK6-Te-imE"/>
                                                     <constraint firstAttribute="trailing" secondItem="12X-DK-Ud4" secondAttribute="trailing" id="QBI-gp-yRg"/>
                                                     <constraint firstItem="YP2-dh-6xA" firstAttribute="centerX" secondItem="jdv-xL-Llo" secondAttribute="centerX" id="Qtg-3Y-m2d"/>
                                                     <constraint firstItem="ikD-PZ-LSo" firstAttribute="top" secondItem="jdv-xL-Llo" secondAttribute="top" constant="20" id="SBm-6I-kaX"/>
@@ -164,18 +171,25 @@
                                                             <constraint firstAttribute="width" constant="80" id="Uab-LW-TWv"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-qP-2Rl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="235" height="252"/>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="JyQ-J0-ZDF" secondAttribute="bottom" constant="20" id="1jq-Nj-CxY"/>
                                                     <constraint firstItem="urC-nF-WZT" firstAttribute="leading" secondItem="9hl-BI-DRq" secondAttribute="leading" id="5Wx-aZ-hx6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hRv-qP-2Rl" secondAttribute="bottom" id="B2r-jT-kps"/>
                                                     <constraint firstItem="urC-nF-WZT" firstAttribute="top" secondItem="9hl-BI-DRq" secondAttribute="top" id="Sge-Kk-Iaf"/>
                                                     <constraint firstAttribute="trailing" secondItem="urC-nF-WZT" secondAttribute="trailing" id="V7r-V3-NBr"/>
                                                     <constraint firstItem="zxe-qo-VHS" firstAttribute="centerX" secondItem="9hl-BI-DRq" secondAttribute="centerX" id="VVm-v3-AQM"/>
                                                     <constraint firstAttribute="bottom" secondItem="urC-nF-WZT" secondAttribute="bottom" id="bug-iw-rS2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hRv-qP-2Rl" secondAttribute="trailing" id="dWj-6d-1DZ"/>
                                                     <constraint firstItem="Opa-eH-1I3" firstAttribute="top" secondItem="9hl-BI-DRq" secondAttribute="top" constant="20" id="eMB-PS-XTz"/>
                                                     <constraint firstAttribute="trailing" secondItem="JyQ-J0-ZDF" secondAttribute="trailing" constant="20" id="rbL-5g-C6m"/>
                                                     <constraint firstItem="zxe-qo-VHS" firstAttribute="centerY" secondItem="9hl-BI-DRq" secondAttribute="centerY" id="roB-oz-PeD"/>
                                                     <constraint firstItem="Opa-eH-1I3" firstAttribute="leading" secondItem="9hl-BI-DRq" secondAttribute="leading" constant="20" id="u0v-DO-8sf"/>
+                                                    <constraint firstItem="hRv-qP-2Rl" firstAttribute="top" secondItem="9hl-BI-DRq" secondAttribute="top" id="y7J-GV-jc9"/>
+                                                    <constraint firstItem="hRv-qP-2Rl" firstAttribute="leading" secondItem="9hl-BI-DRq" secondAttribute="leading" id="yO6-kH-Uhc"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartoon Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9G-c6-zdw">
@@ -213,8 +227,10 @@
                     </view>
                     <connections>
                         <outlet property="cartoonBackgroundImageView" destination="urC-nF-WZT" id="G0W-8P-TJq"/>
+                        <outlet property="cartoonCoverView" destination="hRv-qP-2Rl" id="Rwg-eU-bxB"/>
                         <outlet property="cartoonView" destination="9hl-BI-DRq" id="6qS-He-ihk"/>
                         <outlet property="pokerBackgroundImageView" destination="12X-DK-Ud4" id="cWx-CP-HXO"/>
+                        <outlet property="pokerCoverView" destination="f8v-tD-GO2" id="bjI-m9-g7p"/>
                         <outlet property="pokerView" destination="jdv-xL-Llo" id="gn8-x9-cpg"/>
                     </connections>
                 </viewController>
