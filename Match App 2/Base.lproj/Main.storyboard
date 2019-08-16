@@ -66,7 +66,7 @@
         <!--Select Game Style View Controller-->
         <scene sceneID="IpG-R4-A3h">
             <objects>
-                <viewController storyboardIdentifier="selectGameStyle" id="d5F-G3-9qk" customClass="SelectGameStyleViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectGameStyle" modalTransitionStyle="crossDissolve" id="d5F-G3-9qk" customClass="SelectGameStyleViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-fH-gVe">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,11 +211,9 @@
                         <viewLayoutGuide key="safeArea" id="FUo-GP-04J"/>
                     </view>
                     <connections>
-                        <outlet property="cartononStackView" destination="86Z-Ii-Eqv" id="tCN-uC-9VP"/>
                         <outlet property="cartoonBackgroundImageView" destination="urC-nF-WZT" id="G0W-8P-TJq"/>
                         <outlet property="cartoonView" destination="9hl-BI-DRq" id="6qS-He-ihk"/>
                         <outlet property="pokerBackgroundImageView" destination="12X-DK-Ud4" id="cWx-CP-HXO"/>
-                        <outlet property="pokerStackView" destination="b2k-yV-dct" id="8xe-N0-ZAh"/>
                         <outlet property="pokerView" destination="jdv-xL-Llo" id="gn8-x9-cpg"/>
                     </connections>
                 </viewController>
@@ -226,7 +224,7 @@
         <!--Game View Controller-->
         <scene sceneID="KTT-hA-gY3">
             <objects>
-                <viewController storyboardIdentifier="matchGame" id="Sv3-6g-BTL" customClass="GameViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchGame" modalTransitionStyle="flipHorizontal" id="Sv3-6g-BTL" customClass="GameViewController" customModule="Match_App_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5jp-6Q-EsP">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

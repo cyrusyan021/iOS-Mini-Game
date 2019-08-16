@@ -21,16 +21,21 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var firstCardFlippedIndex: IndexPath?
     
     var timer: Timer?
-    var milliseconds: Float = 9 * 1000
+    var milliseconds: Float = 100 * 1000
     
     var player: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Styling - Timer
-//        timerLabel.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.timerTextField.frame.height))
-//        timerLabel.leftViewMode = .always
+        // Styling - Setup for different game style
+        if SelectGameStyleViewController.gameStyle == "poker" {
+            backgroundImageView.image = UIImage(named: "Background")
+            timerLabel.textColor = UIColor.white
+        } else {
+            backgroundImageView.image = UIImage(named: "Background_special")
+            timerLabel.textColor = UIColor.black
+        }
         
         // Initiate Timer
         timer = Timer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)

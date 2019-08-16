@@ -10,8 +10,6 @@ import UIKit
 
 class SelectGameStyleViewController: UIViewController {
     
-    @IBOutlet weak var pokerStackView: UIStackView!
-    @IBOutlet weak var cartononStackView: UIStackView!
     @IBOutlet weak var pokerView: UIView!
     @IBOutlet weak var pokerBackgroundImageView: UIImageView!
     @IBOutlet weak var cartoonView: UIView!
@@ -22,20 +20,33 @@ class SelectGameStyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Styling - Background Image
         pokerBackgroundImageView.layer.cornerRadius = 10
         pokerBackgroundImageView.clipsToBounds = true
         cartoonBackgroundImageView.layer.cornerRadius = 10
         cartoonBackgroundImageView.clipsToBounds = true
         
-        if SelectGameStyleViewController.gameStyle == "poker" {
-            pokerView.layer.borderWidth = 8
-            pokerView.layer.borderColor = UIColor.white.cgColor
-            pokerView.layer.cornerRadius = 10
-        } else {
-            cartoonView.layer.borderWidth = 8
-            cartoonView.layer.borderColor = UIColor.white.cgColor
-            cartoonView.layer.cornerRadius = 10
+        // Tap Gesture - Setup for both View
+        let pokerTapGesture = UITapGestureRecognizer(target: self, action: #selector(styleOnClick(from:)))
+        let cartoonTapGesture = UITapGestureRecognizer(target: self, action: #selector(styleOnClick(from:)))
+        pokerView.addGestureRecognizer(pokerTapGesture)
+        pokerView.isUserInteractionEnabled = true
+        cartoonView.addGestureRecognizer(cartoonTapGesture)
+        cartoonView.isUserInteractionEnabled = true
+    }
+    
+    // MARK: - Game style onClick Function
+    @objc func styleOnClick(from: UIGestureRecognizer) {
+        
+        if from.view == pokerView {
+            SelectGameStyleViewController.gameStyle = "poker"
+        } else if from.view == cartoonView {
+            SelectGameStyleViewController.gameStyle = "cartoon"
         }
+        
+        let gameStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let matchGameViewController = gameStoryBoard.instantiateViewController(withIdentifier: "matchGame") as! GameViewController
+        self.present(matchGameViewController, animated: true, completion: nil)
         
     }
     
